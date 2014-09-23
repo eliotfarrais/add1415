@@ -1,0 +1,47 @@
+<html>
+<head>
+	<title>Instalación y configuración de LTSP</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+</head>
+<body>
+<div style='display:table-row; padding: 10px;'>
+  <div style='float: left; width=20%; padding:10px;'>
+  <img src='./files/logo.png'/>
+  </div>
+  <div style='float: left;padding:10px'>
+  <ul>
+    <li><b>M&oacute;dulo:</b> <i>Sistemas Operativos</i></li>
+    <li><b>T&iacute;tulo del trabajo</b> <i>Instalación y configuración de LTSP</i></li>
+    <li><b>Componentes del grupo:</b> <i>Eliot Farrais García</i></li>
+    <li><b>Curso Acad&eacute;mico:</b> <i>2014/2015</i></li>
+    <li><b>Fecha de entrega:</b> <i>23 de septiembre de 2014</i></li>
+  </ul>
+  </div>
+</div>
+<div style='float: clear;background-color: #eeeeee; border:2px solid; border-radius:10px; padding: 10px;'>
+<a href='#bloque1'>Instalación y configuración</a> | <a href='#bloque2'>Funcionamient</a> 
+</div>
+<h1><a id='bloque1'>Instalación y configuración</a></h1>
+	<ol>
+		<li><p>Instalamos y buscamos los siguientes paquetes desde Synaptic:<br>apt-get install ltsp-server-standalone<br></p>
+			 <img src='./imagenes/1.png'/>
+			 <p>Nota: Openssh viene ya instalado</p>				
+		</li>
+		<li>
+			<p>Configuramos las tarjetas de red, una estatica para la red internet(eth1) y otra para la red interna donde va nuestro cliente(eth0)</p>
+			<img src='./imagenes/2.png'/>
+		</li>
+		<li>
+			<p>Configuramos las tarjetas de red interna en virtual box con el adaptador de red PCnet-FAST III para servidor y cliente</p>
+			<img src='./imagenes/3.png'/>
+		</li>
+		<li>
+			<p>Como orden de arranque, ponemos red como la primera en el cliente</p>
+			<img src='./imagenes/4.png'/>
+		</li>
+	</ol>
+<h1><a id='bloque2'>Funcionamiento</a></h1>
+	<p>Como vemos se nos ejecuta el cliente ligero en el cliente, sin problemas</p>
+	<img src='./imagenes/5.png'/>
+</body>
+</html>
