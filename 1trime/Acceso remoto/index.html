@@ -1,0 +1,238 @@
+<html>
+<head>
+	<title>Instalación y configuración de LTSP</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+</head>
+<body>
+<div style='display:table-row; padding: 10px;'>
+  <div style='float: left; width=20%; padding:10px;'>
+  <img src='./files/logo.png'/>
+  </div>
+  <div style='float: left;padding:10px'>
+  <ul>
+    <li><b>M&oacute;dulo:</b> <i>Sistemas Operativos</i></li>
+    <li><b>T&iacute;tulo del trabajo</b> <i>Acceso Remoto</i></li>
+    <li><b>Componentes del grupo:</b> <i>Eliot Farrais García</i></li>
+    <li><b>Curso Acad&eacute;mico:</b> <i>2014/2015</i></li>
+    <li><b>Fecha de entrega:</b> <i>23 de septiembre de 2014</i></li>
+  </ul>
+  </div>
+</div>
+<div style='float: clear;background-color: #eeeeee; border:2px solid; border-radius:10px; padding: 10px;'>
+<a href='#bloque1'>Instalación y configuración de VNC</a> | <a href='#bloque2'>Instalación y configuración de RDP</a> | <a href='#bloque3'>Instalación y configuración de Servidor de terminales</a> | <a href='#bloque4'>Instalación y configuración de Reoteapp</a> 
+</div>
+<h1><a id='bloque1'>Instalación y configuración de VNC</a></h1>
+<h2>Instalación del Servidor Windows Server</h2>
+	<ol>
+		<li>
+			<p>Nos descargamos RealVNC de: https://www.realvnc.com/download/get/1590/</p>				
+		</li>
+		<li>
+			<p>Instalamos el servidor de VNC. En la instalación elejimos todos los componentes</p>
+			<img src='./imagenes/1.png'/>
+		</li>
+		<li>
+			<p>Obtenemos la licencia Free desde la página del servidor</p>
+			<img src='./imagenes/2.png'/>
+		</li>
+		<li>
+			<p>Aceptamos la conexiones no cifradas en la instalación</p>
+			<img src='./imagenes/3.png'/>
+		</li>
+		<li>
+			<p>Ponemos la contraseña predeterminada, en nuestro caso será "root"</p>
+			<img src='./imagenes/4.png'/>
+		</li>
+		<li>
+			<p>Una vez realizada la instalación, se nos iniciará el servidor VNC. Se debe de inciar correctamente con todos lo Servicios en Activo</p>
+			<img src='./imagenes/5.png'/>
+		</li>
+	</ol>
+<h2>Instalación del Servidor Windows Cliente</h2>
+	<ol>
+		<li>
+			<p>Nos vamos al cliente, e instalamos VNC viewer, el cliente del VNC para ver el escritorio remoto</p>
+			<img src='./imagenes/6.png'/>
+		</li>
+		<li>
+			<p>Una vez instalado, pondremos la ip o el nombre dns de nuestro servidor VNC.</p>
+			<img src='./imagenes/7.png'/>
+		</li>
+		<li>
+			<p>Aceptaremos las conexiones no cifradas entre cliente y servidor</p>
+			<img src='./imagenes/8.png'/>
+		</li>
+		<li>
+			<p>Pondremos nuesra contraseña predeterminada</p>
+			<img src='./imagenes/9.png'/>
+		</li>
+		<li>
+			<p>Nos hemos conectado correctamente a nuestro servidor VNC en el servidor</p>
+			<img src='./imagenes/10.png'/>
+		</li>
+	</ol>
+<h2>Instalación del Lubuntu Servidor</h2>
+	<ol>
+		<li>
+			<p>Nos descargamos de la página oficial el Servidor para Linux de debian y lo instalamos</p>
+			<img src='./imagenes/14.png'/>
+		</li>
+		<li>
+			<p>Nos registramos y ponemos la licencia. Con lo que así registramos el programa</p>
+			<img src='./imagenes/15.png'/>
+		</li>
+		<li>
+			<p>Elejimos la conexiones no cifradas</p>
+			<img src='./imagenes/16.png'/>
+		</li>
+		<li>
+			<p>Como contraseña ponemos root</p>
+			<img src='./imagenes/17.png'/>
+		</li>
+		<li>
+			<p>Nos conectamos al Servidor Lubuntu</p>
+			<img src='./imagenes/18.png'/>
+		</li>
+	</ol>
+<h2>Instalación del Lubuntu cliente</h2>
+	<ol>
+		<li>
+			<p>Nos descargamos el cliente Remmina para Lubuntu en Synaptics</p>
+			<img src='./imagenes/11.png'/>
+		</li>
+		<li>
+			<p>Lo abrimos y realizamos una conexión VNC, eligiendola en la parte protocolos.</p>
+			<img src='./imagenes/12.png'/>
+		</li>
+		<li>
+			<p>Se nos realiza la Conexión</p>
+			<img src='./imagenes/13.png'/>
+		</li>
+	</ol>
+<h2>De Lubuntu a Lubuntu</h2>
+	<ol>
+		<li>
+			<p>Lubuntu Cliente</p>
+			<img src='./imagenes/19.png'/>
+		</li>
+		<li>
+			<p>Lubuntu Server</p>
+			<img src='./imagenes/20.png'/>
+		</li>
+	</ol>
+<h1><a id='bloque2'>Instalación y configuración de RDP</a></h1>
+<h2>Instalación en Windows 2008 Server RDP</h2>
+<p>En el caso de Windows no es necesario instalar escritorio RDP, dado qe viene integrado con Windows</p>
+		<ol>
+		<li><p>Para configurarlo, en el servidor, Nos vamos a Menu Inicio -> Equipo -> Propiedades -> Configuración de acceso remoto -> Ejecutar cualquier versión</p>
+			 <img src='./imagenes/21.png'/>			
+		</li>
+		<li>
+			<p>Iniciamos escritorio remoto en el Cliente, y ponemos la dirreción Ip del Servidor</p>
+			<img src='./imagenes/22.png'/>
+		</li>
+		<li>
+			<p>Seleccionamos el nombre de usuario y la contraseña</p>
+			<img src='./imagenes/23.png'/>
+		</li>
+		<li>
+			<p>Se nos inicia sesión sin problemas en el Cliente Windows</p>
+			<img src='./imagenes/24.png'/>
+		</li>
+		<li>
+			<p>Se nos inicia sesión sin problemas en el Cliente Lubuntu con Remmina</p>
+			<img src='./imagenes/25.png'/>
+		</li>
+	</ol>
+<h2>Instalación en Lubuntu de Servidor rdp</h2>
+	<ol>
+		<li>
+			<p>Instalamos el servidor xrdp desde Synaptics.</p>
+			<img src='./imagenes/26.png'/>
+		</li>
+		<li>
+			<p>Configuramos el archivo: sudo nano /etc/xrdp/startwm.sh y editamos<br>
+			<br>#. /etc/X11/Xsession
+			<br> . /usr/bin/startlxde
+			<br>Quedando de la siguiente manera
+			</p>
+			<img src='./imagenes/28.png'/>
+		</li>
+		<li>
+			<p>En el cliente, conectamos con la IP en el Servidor</p>
+			<img src='./imagenes/27.png'/>
+		</li>
+			<p>Cuando nos salga la siguiente ventana, elejiremos en modules vnc-any y pondremos la contraseña de superusuario</p>
+			<img src='./imagenes/29.png'/>
+		<li>
+			<p>Se nos conecta sin problemas al escritorio de Lubuntu con protocolo rdp</p>
+			<img src='./imagenes/30.png'/>
+		</li>
+	</ol>
+<h1><a id='bloque3'>Instalación y configuración de Servidor de Terminales</a></h1>
+	<ol>
+		<li><p>Abrimos el Administrador de servidores y vamos a Agregar Roles. DAmos clic en Agregar Servicios de escritorio remoto y damos clic en siguiente</p>
+			 <img src='./imagenes/31.png'/>				
+		</li>
+		<li>
+			<p>Dentro de los servicios de rol, activamos la casilla Host de sesión de Escritorio remoto y pulsamos siguiente</p>
+			<img src='./imagenes/32.png'/>
+		</li>
+		<li>
+			<p>Al elegir el Método de autentificación, elejimos "No requerir autenticficación de red" </p>
+			<img src='./imagenes/33.png'/>
+		</li>
+		<li>
+			<p>En el modo de licencia, elejiremos por dispositivo</p>
+			<img src='./imagenes/34.png'/>
+		</li>
+		<li>
+			<p>En el Grupo de usuarios, agregamos a Administrador para poder iniciar sesión con el</p>
+			<img src='./imagenes/35.png'/>
+		</li>
+		<li>
+			<p>Activaremos las Experiencias del cliente, activando todas sus opciones. Una vez terminado esto, le damos a instalar y reiniciamos el sistema.</p>
+			<img src='./imagenes/36.png'/>
+		</li>
+		<li>
+			<p>Pondremos los usuario dentro del grupo de escritorio remoto</p>
+			<img src='./imagenes/37.png'/>
+		</li>
+		<li>
+			<p>Iniciaremos sesión con el usuario que hemos añadido al grupo</p>
+			<img src='./imagenes/38.png'/>
+		</li>
+	</ol>
+
+<h1><a id='bloque4'>Instalación y configuración de RemoteApp</a></h1>
+	<ol>
+		<li><p>Añadimos las herramientas del host de escritorio remoto.<br></p>
+			 <img src='./imagenes/39.png'/>			
+		</li>
+		<li>
+			<p>Abrimos remoteapp</p>
+			<img src='./imagenes/40.png'/>	
+		</li>
+		<li>
+			<p>Nos dirijimos a Configuración de Puerta de enlace de Escritorio remoto, y configuramos las conexiones de acceso remoto.<br> una vez finalizado cerramos</p>
+			<img src='./imagenes/41.png'/>
+		</li>
+		<li>
+			<p>Añadimos una nueva alpicacion a remoteapp. Para ello nos dirijimos a Agregar Programas a remoteapp</p>
+			<img src='./imagenes/42.png'/>
+		</li>
+		<li>
+			<p>Agregamos en Wordpad el nuevo programa</p>
+			<img src='./imagenes/43.png'/>
+		</li>
+		<li>
+			<p>Terminamos agregando y dando a aceptar</p>
+			<img src='./imagenes/44.png'/>
+		</li>
+		<li>
+			<p>Iniciamos el programa desde el escritorio remoto, sin problemas</p>
+			<img src='./imagenes/45.png'/>
+		</li>
+	</ol>
+</body>
+</html>
