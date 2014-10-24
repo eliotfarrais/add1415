@@ -1,0 +1,166 @@
+<html>
+<head>
+	<title>Instalación y configuración de LTSP</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+</head>
+<body>
+<div style='display:table-row; padding: 10px;'>
+  <div style='float: left; width=20%; padding:10px;'>
+  <img src='./files/logo.png'/>
+  </div>
+  <div style='float: left;padding:10px'>
+  <ul>
+    <li><b>M&oacute;dulo:</b> <i>Sistemas Operativos</i></li>
+    <li><b>T&iacute;tulo del trabajo</b> <i>SSH</i></li>
+    <li><b>Componentes del grupo:</b> <i>Eliot Farrais García</i></li>
+    <li><b>Curso Acad&eacute;mico:</b> <i>2014/2015</i></li>
+    <li><b>Fecha de entrega:</b> <i></i></li>
+  </ul>
+  </div>
+</div>
+<div style='float: clear;background-color: #eeeeee; border:2px solid; border-radius:10px; padding: 10px;'>
+<a href='#bloque1'>Instalación y configuración de SSH en Lubuntu</a> | <a href='#bloque2'>Cambio de Color en el Prompt</a> | <a href='#bloque3'>Instalación y configuración de Servidor de terminales</a> | <a href='#bloque4'>Instalación y configuración de Reoteapp</a> 
+</div>
+<h1><a id='bloque1'>Instalación y configuración de SSH en Lubuntu Servidor</a></h1>
+<h2>Instalación del Servidor SSH en Lubuntu</h2>
+	<ol>
+		<li>
+			<p>Pondremos una IP estática en nuestro Servidor, elijiendo como IP estática una de las del rango que nos ofrece el profesor </p>
+			<img src='./imagenes/1.png'/>
+		</li>
+		<li>
+			<p>Crearemos el grupo remoteuser en la linea de comandos con el comando groupadd: sudo groupadd alumnos </p>
+			<img src='./imagenes/2.png'/>
+		</li>
+				<li>
+			<p>Crearemos varios usuarios con el comando useradd: sudo useradd remoteuser1 -g remoteuser -d /home/remoteuser1 -m -s /bin/bash remoteuser1</p>
+				<p>Los usuarios a crear son</p>
+					<ol>
+					<li><p>remoteuser1</p></li>
+					<li><p>remoteuser2</p></li>
+					<li><p>remoteuser3</p></li>
+					<li><p>remoteuser4</p></li>
+					</ol>
+			<img src='./imagenes/3.png'/>
+		</li>
+		<li>
+			<p>Editaremos el archivo /etc/hosts del servidor que vamos a usar en el Server.<br> Usaremos el comando nano /etc/hosts</p>
+			<img src='./imagenes/4.png'/>
+		</li>
+		<ul>
+			<li>
+				<p>Archivo /etc/network del cliente de Lubuntu</p>
+				<img src='./imagenes/5.png'/>
+			</li>
+			<li>
+				<p>Archivo /etc/nework del cliente de Windows 7</p>
+				<img src='./imagenes/6.png'/>
+			</li>
+		</ul>
+		<li>
+			<p>Instalamos el servidor ssh con el comando en synaptics. El comando a buscar es openssh-server</p>
+			<img src='./imagenes/7.png'/>
+		</li>
+		<li>
+			<p>Instalamos openssh-client en el cliente</p>
+			<img src='./imagenes/8.png'/>
+		</li>
+		<li>
+			<p>Si todo ha salido correctamente se debe de poder realizar la conexión entre cliente y servidor. <br> por la consola de comando desde el cliente al servidor</p>
+			<img src='./imagenes/9.png'/>
+		</li>
+		<li>
+			<p>Desde un cliente de Windows 7, con PUTTTY podemos realizar la conexión ssh, al servidor de ubuntu</p>
+			<img src='./imagenes/10.png'/>
+		</li>
+		<li>
+			<p>Comprobar contenido del fichero $HOME/.ssh/known_hosts. en el equipo cliente. ¿Te suena la clave que aparece?</p>
+			<img src='./imagenes/11.png'/>
+		</li>
+		<li>
+			<p>Generar nuevas claves de equipo en SSH-SERVER. Como usuario root ejecutamos en SSH-SERVER: "ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key"</p>
+			<img src='./imagenes/12.png'/>
+		</li>
+		<li>
+			<p>Comprobar qué sucede al volver a conectarnos desde los clientes, usando el usuario remoteuser2 y remoteuser1. ¿Qué sucede?.<br> El equipo cliente no reconoce como conocido al servidor, dando este un fallo a la hora de comprobar las claves.</p>
+			<img src='./imagenes/13.png'/>
+		</li>
+	</ol>
+<h1><a id='bloque2'>Cambio de color en el Prompt</a></h1>
+<h2>Modificando archivo de configuración $HOME/.bashrc</h2>
+		<ol>
+		<li><p>Modificamos el archivo bash añadiendo las lineas que aparecen en la imagen .bashrc</p>
+			 <img src='./imagenes/14.png'/>			
+		</li>
+		<li>
+			<p>Nos sale el prompt de color verde cada vez que iniciamos conexión remota SSH</p>
+			<img src='./imagenes/15.png'/>			
+		</li>
+	</ol>
+<h1><a id='bloque3'>Autenticación mediante claves públicas</a></h1>
+		<li>
+			<p>En el cliente ejecutamos "ssh-keygen -t rsa"</p>
+			<img src='./imagenes/16.png'/>
+		</li>
+		<li>
+			<p>Nos vamos a la carpeta /home/eliot/.ssh</p>
+			<img src='./imagenes/17.png'/>
+		</li>
+		<li>
+			<p>Accedemos al usuario y comprobamos que no nospido contraseña</p>
+			<img src='./imagenes/18.png'/>
+		</li>
+	</ol>
+
+<h1><a id='bloque4'>Uso de SSH como túnel para X</a></h1>
+	<ol>
+		<li>
+			<p>Modificamos la linea "X11Forwarding yes" para activar el túnel X </p>
+			 <img src='./imagenes/19.png'/>			
+		</li>
+		<li>
+			<p>ejecutamos el comando ssh -X remoteuser1@ssh-server en el cliente</p>
+			<img src='./imagenes/20.png'/>			
+		</li>
+		<li>
+			<p>Escribimos Geany y se nos abre en la maquina cliente<br>
+			Nota: Todos los cambioes hechos en Geany se guardarán en el servidor</p>
+			<img src='./imagenes/21.png'/>	
+		</li>
+	</ol>
+<h1><a id='bloque5'>Uso de SSH como túnel para X</a></h1>
+	<ol>
+		<li>
+			<p>Hacemos los mismos pasos que el ejercicio anterior, pero escribimos notepad.</p>
+			<img src='./imagenes/22.png'/>	
+		</li>
+	</ol>
+</h1>
+<h1><a id='bloque5'>Retricciones de uso</a></h1>
+	<ol>
+		<li>
+			<p>El usuario remoteuser1 podrá conectarse sin problemas</p>
+			<img src='./imagenes/23.png'/>	
+		</li>
+		<li>
+			<p>Denegar al usuario remoteuser2 el acceso mediante ssh, para ello modificamos el archivo: /etc/ssh/sshd_config</p>
+			<img src='./imagenes/24.png'/>	
+		</li>
+		<li>
+			<p>No permitir el acceso a la Ip del cliente, para ello modificaremos el archivo /etc/host.deny</p>
+			<img src='./imagenes/25.png'/>	
+		</li>
+		<li>
+			<p>Creamos un grupo para remoteuser4 llamado remoteapps y lo incluimos dentro</p>
+			<img src='./imagenes/26.png'/>	
+		</li>
+		<li>
+			<p>Buscamos el programa geany con el comando "whereis geany"</p>
+			<p>Localizamos el programa (/usr/geany) y le cambiamos los permisos a 750 con chmod </p>
+			<p>Cambiamos el propietario del grupo con el comando chgrp /usr/bn/geany</p>
+			<p>Si todo ha salido correctamente, solo remoteuser4 podrá iniciar Geany</p>
+			<img src='./imagenes/27.png'/>	
+		</li>
+	</ol>
+</body>
+</html>
