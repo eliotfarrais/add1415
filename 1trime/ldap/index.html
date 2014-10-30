@@ -1,0 +1,186 @@
+<html>
+<head>
+	<title>Instalación y configuración de LTSP</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+</head>
+<body>
+<div style='display:table-row; padding: 10px;'>
+  <div style='float: left; width=20%; padding:10px;'>
+  <img src='./files/logo.png'/>
+  </div>
+  <div style='float: left;padding:10px'>
+  <ul>
+    <li><b>M&oacute;dulo:</b> <i>Sistemas Operativos</i></li>
+    <li><b>T&iacute;tulo del trabajo</b> <i>Ldap</i></li>
+    <li><b>Componentes del grupo:</b> <i>Eliot Farrais García</i></li>
+    <li><b>Curso Acad&eacute;mico:</b> <i>2014/2015</i></li>
+    <li><b>Fecha de entrega:</b> <i>4 de noviembre de 2014</i></li>
+  </ul>
+  </div>
+</div>
+<div style='float: clear;background-color: #eeeeee; border:2px solid; border-radius:10px; padding: 10px;'>
+<a href='#bloque1'>Instalación de Ldap</a> | <a href='#bloque2'>Instalación de php</a> | <a href='#bloque3'>Instalación de JXplorer y usuarios</a>
+</div>
+<h1><a id='bloque1'>instalación de Ldap</a></h1>
+<h2>Instalación del Servidor Windows Server</h2>
+	<ol>
+		<li>
+			<p>Instalamos los paquetes slapd db5.3-util ldap-utils </p>		
+			<img src='./imagenes/1.png'/>		
+		</li>
+		<li>
+			<p>Lanzamos el asistente de instalación de ldap con dpkg-reconfigure sldap</p>
+			<img src='./imagenes/2.png'/>		
+		</li>
+		<li>
+			<p>Lo primero que nos pregunta es que si vamos a cerrar el asistente, le decimos que no</p>
+			<img src='./imagenes/2.png'/>
+		</li>
+		<li>
+			<p>Aquí ponemos el nombre de nuestro dominio</p>
+			<img src='./imagenes/3.png'/>
+		</li>
+		<li>
+			<p>Luego aquí pondremos el nombre de nuestra organización</p>
+			<img src='./imagenes/4.png'/>
+		</li>
+		<li>
+			<p>Pondremos luego aquí la contraseña del administrador</p>
+			<img src='./imagenes/5.png'/>
+		</li>
+		<li>
+			<p>Verificamos la contraseña</p>
+			<img src='./imagenes/6.png'/>
+		</li>
+		<li>
+			<p>Seleccionaremos el sistema BDB</p>
+			<img src='./imagenes/7.png'/>
+		</li>
+		<li>
+			<p>Le diremos que no a al ahora de purgar la base de datos</p>
+			<img src='./imagenes/8.png'/>
+		</li>
+		<li>
+			<p>Si nos pide mover los datos a una nueva base de datos, le diremos que si</p>
+			<img src='./imagenes/9.png'/>
+		</li>
+		<li>
+			<p>Nos preguntará para usar el protocolo LDAPv2. al que le diremos que no</p>
+			<img src='./imagenes/10.png'/>
+			<p>Al finalizar este paso hemos terminado todo el proceso de configuración de LDAP</p>
+		</li>
+		<li>
+			<p>Ahora nos toca iniciar ldap, para ello pondremos el comando /etc/init.d/slapd stop | start</p>
+			<img src='./imagenes/11.png'/>
+		</li>
+<h1><a id='bloque2'>instalación de phpLDAPadmin</a></h1>
+	<ol>
+		<li>
+			<p>Descargaremos los paquetes "apache2", "libapache2-mod-php5", "php5-ldap" por Synaptic</p>
+			<img src='./imagenes/12.png'/>
+		</li>
+		<li>
+			<p>Instalaremos ahora phpLDAPadmin a través de Synaptic</p>
+			<img src='./imagenes/13.png'/>
+		</li>
+		<li>
+			<p>Si todo ha salido correctamente se nos habrá iniciado todo correctamente</p>
+			<img src='./imagenes/14.png'/>
+		</li>
+	</ol>
+<h1><a id='bloque3'>Instalación de JXexplorer</a></h1>
+	<ol>
+		<li>
+			<p>Instalamos JRE desde synaptics</p>
+			<img src='./imagenes/16.png'/>
+		</li>
+		<li>
+			<p>Descargamos el archivo jxplorer de la página:http://pegacat.com/jxplorer/downloads/users.html<br>
+			y le damos permisos de ejecución al programa una vez decargado</p>
+			<img src='./imagenes/17.png'/>
+		</li>
+		</li>
+			<p>Damos siguiente y aceptamos las condiciones de usuario final</p>
+			<img src='./imagenes/18.png'/>
+		</li>
+		<li>
+			<p>Seleccionamos el destino donde queremos guardar el directorio del programa</p>
+			<img src='./imagenes/19.png'/>
+		</li>
+		<li>
+			<p>Damos adelante, para empezar la instalación del JXplorer</p>
+			<img src='./imagenes/20.png'/>
+		</li>
+		<li>
+			<p>Se ha terminado de instalar el programa JXplorer</p>
+			<img src='./imagenes/21.png'/>
+		</li>
+		<li>
+			<p>Ejecutamos el archivo ./jxplorer.sh para abrir el programa</p>
+			<img src='./imagenes/22.png'/>
+		</li>
+		<li>
+			<p>Iniciamos sesión con el JXplorer</p>
+			<img src='./imagenes/23.png'/>
+		</li>
+		<li>
+			<p>Como se puede observar, funciona.</p>
+			<img src='./imagenes/24.png'/>
+		</li>
+		<li>
+			<p>Creamos una nueva unidad organizativa llamada users, dando clic derecho en eliot ->new entry de la siguiente manera</p>
+			<img src='./imagenes/25.png'/>
+		</li>
+		<li>
+			<p>Por ultimo le damos a Submit para guardar los cambios</p>
+			<img src='./imagenes/26.png'/>
+		</li>
+		<li>
+			<p>Crearemos dos grupos, profesores y alumnos</p>
+			<ul>
+				<li>
+					<p>Grupo Profesores</p>
+					<img src='./imagenes/27.png'/>
+					<img src='./imagenes/28.png'/>
+				</li>
+				<li>
+					<p>Grupo Alumnos</p>
+					<img src='./imagenes/29.png'/>
+					<img src='./imagenes/30.png'/>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<p>Crearemos cinco usuarios. Javier, Miguel, Joaquin, Jessica, Joel</p>
+			<ul>
+				<li>
+					<p>Alumno Javier</p>
+						<img src='./imagenes/31.png'/>
+						<img src='./imagenes/32.png'/>
+				</li>
+				<li>
+					<p>Alumno Miguel</p>
+						<img src='./imagenes/33.png'/>
+						<img src='./imagenes/34.png'/>
+				</li>
+				<li>
+					<p>Alumno Joaquin</p>
+						<img src='./imagenes/35.png'/>
+				</li>
+				<li>
+					<p>Alumno Jessica</p>
+						<img src='./imagenes/36.png'/>
+				</li>
+				<li>
+					<p>Alumno Joel</p>
+					<img src='./imagenes/37.png'/>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<p>Nos quedará algo como esto</p>
+			<img src='./imagenes/38.png'/>
+		</li>
+	</ol>
+</body>
+</html>
