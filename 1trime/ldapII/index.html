@@ -1,0 +1,110 @@
+<html>
+<head>
+	<title>Instalación y configuración de LTSP</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+</head>
+<body>
+<div style='display:table-row; padding: 10px;'>
+  <div style='float: left; width=20%; padding:10px;'>
+  <img src='./files/logo.png'/>
+  </div>
+  <div style='float: left;padding:10px'>
+  <ul>
+    <li><b>M&oacute;dulo:</b> <i>Sistemas Operativos</i></li>
+    <li><b>T&iacute;tulo del trabajo</b> <i>Ldap</i></li>
+    <li><b>Componentes del grupo:</b> <i>Eliot Farrais García</i></li>
+    <li><b>Curso Acad&eacute;mico:</b> <i>2014/2015</i></li>
+    <li><b>Fecha de entrega:</b> <i>4 de noviembre de 2014</i></li>
+  </ul>
+  </div>
+</div>
+<div style='float: clear;background-color: #eeeeee; border:2px solid; border-radius:10px; padding: 10px;'>
+<a href='#bloque1'>Instalación de Ldap Cliente</a> | <a href='#bloque2'>Configuración de LDAP</a> | <a href='#bloque3'></a>
+</div>
+<h1><a id='bloque1'>Instalación de Ldap cliente</a></h1>
+	<ol>
+		<li>
+			<p>Instalamos los paquetes libnss-ldap </p>		
+			<img src='./imagenes/1.png'/>		
+		</li>
+		<li>
+			<p>Instalamos la libreria libpam-ldap</p>
+			<img src='./imagenes/2.png'/>	
+		</li>
+		<li>
+			<p>Instalamos el paquee nscd</p>
+			<img src='./imagenes/3.png'/>
+		</li>
+		<li>
+			<p>Modificamos el archivo /etc/ldap.conf</p>
+			<img src='./imagenes/4.png'/>
+		</li>
+		<li>
+			<p>Iniciamos el asistente de instalación de nuevo con el comando: dpkg-reconfigure ldap-auth-config</p>
+			<img src='./imagenes/5.png'/>
+		</li>
+		<li>
+			<p>Indicamos la URIo dirreción para acceder a ldap</p>
+			<img src='./imagenes/6.png'/>
+		</li>
+		<li>
+			<p>Seleccionaos la versión de Ldap que estamos utilizando</p>
+			<img src='./imagenes/7.png'/>
+		</li>
+		<li>
+			<p>Seleccionamos que si, para que se pueda cambiar las contraseñas del usuario del directorio más adelante</p>
+			<img src='./imagenes/8.png'/>
+		</li>
+		<li>
+			<p>Damos que no es necesario autentificarse para consultar el directorio LDAP</p>
+			<img src='./imagenes/9.png'/>
+		</li>
+		<li>
+			<p>Indicamos a cuenta de administrador del servidor LDAP</p>
+			<img src='./imagenes/10.png'/>
+		</li>
+		<li>
+			<p>Indicamos la contraseña de admin, que en nuestro caso es root</p>
+			<img src='./imagenes/11.png'/>
+		</li>
+		<li>
+			<p>Configuramos el archivo /etc/nsswitch.conf</p>
+			<img src='./imagenes/12.png'/>
+		</li>
+		<li>
+			<p>Configuramos los archicos common-auth</p>
+			<img src='./imagenes/13.png'/>
+		</li>
+		<li>
+			<p>Configuramos los archivos common-account</p>
+			<img src='./imagenes/14.png'/>
+		</li>
+		<li>
+			<p>Configuramos el archivo common-session</p>
+			<img src='./imagenes/15.png'/>
+		</li>
+		<li>
+			<p>Configuramos el archivo common-password</p>
+			<img src='./imagenes/16.png'/>
+		</li>
+		<li>
+			<p>Añadimos al final del fichero common-session las siguientes lineas</p>
+			<img src='./imagenes/17.png'/>
+		</li>
+	</ol>
+<h1><a id='bloque2'>instalación de phpLDAPadmin</a></h1>
+	<ol>
+		<li>
+			<p>Descargaremos los paquetes "apache2", "libapache2-mod-php5", "php5-ldap" por Synaptic</p>
+			<img src='./imagenes/12.png'/>
+		</li>
+	</ol>
+<h1><a id='bloque3'>Instalación de JXexplorer</a></h1>
+	<ol>
+		<li>
+			<p>Instalamos JRE desde synaptics</p>
+			<img src='./imagenes/16.png'/>
+		</li>
+	</ol>
+</body>
+</html>
