@@ -1,0 +1,137 @@
+<html>
+<head>
+	<title>Instalación y configuración de LTSP</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+</head>
+<body>
+<div style='display:table-row; padding: 10px;'>
+  <div style='float: left; width=20%; padding:10px;'>
+  <img src='./files/logo.png'/>
+  </div>
+  <div style='float: left;padding:10px'>
+  <ul>
+    <li><b>M&oacute;dulo:</b> <i>Sistemas Operativos</i></li>
+    <li><b>T&iacute;tulo del trabajo</b> <i> Crear un servicio</i></li>
+    <li><b>Componentes del grupo:</b> <i>Eliot Farrais García</i></li>
+    <li><b>Curso Acad&eacute;mico:</b> <i>2014/2015</i></li>
+    <li><b>Fecha de entrega:</b> <i>23 de septiembre de 2014</i></li>
+  </ul>
+  </div>
+</div>
+<div style='float: clear;background-color: #eeeeee; border:2px solid; border-radius:10px; padding: 10px;'>
+<a href='#bloque1'>System V</a> | <a href='#bloque2'>Instalación y configuración de RDP</a> | <a href='#bloque3'>Instalación y configuración de Servidor de terminales</a> | <a href='#bloque4'>Instalación y configuración de Reoteapp</a> 
+</div>
+<h1><a id='bloque1'>System V</h1>
+<h2><Script Demonio</a></h2>
+	<ol>
+		<li>
+			<p>Creamos el Script y lo mentemos en /usr/local/bin/kupd</p>
+			<img src='./imagenes/1.png'/>				
+		</li>
+		<li>
+			<p>Damos permisos de ejecución con el comando chmod 777</p>
+			<img src='./imagenes/2.png'/>	
+		</li>
+		<li>
+			<p>Instalamos Ruby </p>
+			<img src='./imagenes/3.png'/>	
+		</li>
+		<li>
+			<p>Creamos el directorio /etc/kup con el comando mkdir</p>
+			<img src='./imagenes/5.png'/>	
+		</li>
+		<li>
+			<p>Ejecutamos el Script y comprobamos que funciona haciendo cat en el archivo cat /etc/kup/kup.log</p>
+			<img src='./imagenes/4.png'/>	
+		</li>
+		<li>
+			<p>Lo paramos ejecutando el comando rm /etc/kup/running</p>
+			<img src='./imagenes/6.png'/>	
+		</li>
+	</ol>
+<h2>Script de control</h2>
+	<ol>
+		<li>
+			<p>Creamos el archivo en /etc/init.d/kup</p>
+			<img src='./imagenes/7.png'/>
+		</li>
+		<li>
+			<p>Damos permisos de ejecución con el comando chmod 777</p>
+			<img src='./imagenes/8.png'/>
+		</li>
+		<li>
+			<p>Probamos que funciona mediante el uso de Start|Stop|Status</p>
+			<img src='./imagenes/9.png'/>
+		</li>
+		<li>
+			<p>Miramos nuestro runlvel, que suele ser el Nº2</p>
+			<img src='./imagenes/10.png'/>
+		</li>
+		<li>
+			<p>Creamos un enlace simbolico en /etc/rc2.d con el nombre S99kup</p>
+			<img src='./imagenes/11.png'/>
+		</li>
+		<li>
+			<p>damos permisos de ejecución en /etc/rc2.d</p>
+			<img src='./imagenes/12.png'/>
+		</li>
+		<li>
+			<p>Modificamos el Script para que se pueda arrancar sin problemas</p>
+			<img src='./imagenes/14.png'/>
+		</li>
+		<li>
+			<p>Vemos que se nos ejecuta sin problemas al iniciar el sistema</p>
+			<img src='./imagenes/15.png'/>
+		</li>
+	</ol>
+<h2>Instalación del Lubuntu Servidor</h2>
+	<ol>
+		<li>
+			<p>Nos descargamos de la página oficial el Servidor para Linux de debian y lo instalamos</p>
+			<img src='./imagenes/14.png'/>
+		</li>
+	</ol>
+<h2>Instalación del Lubuntu cliente</h2>
+	<ol>
+		<li>
+			<p>Nos descargamos el cliente Remmina para Lubuntu en Synaptics</p>
+			<img src='./imagenes/11.png'/>
+		</li>
+	</ol>
+<h2>De Lubuntu a Lubuntu</h2>
+	<ol>
+		<li>
+			<p>Lubuntu Cliente</p>
+			<img src='./imagenes/19.png'/>
+		</li>
+	</ol>
+<h1><a id='bloque2'>Instalación y configuración de RDP</a></h1>
+<h2>Instalación en Windows 2008 Server RDP</h2>
+<p>En el caso de Windows no es necesario instalar escritorio RDP, dado qe viene integrado con Windows</p>
+		<ol>
+		<li><p>Para configurarlo, en el servidor, Nos vamos a Menu Inicio -> Equipo -> Propiedades -> Configuración de acceso remoto -> Ejecutar cualquier versión</p>
+			 <img src='./imagenes/21.png'/>			
+		</li>
+	</ol>
+<h2>Instalación en Lubuntu de Servidor rdp</h2>
+	<ol>
+		<li>
+			<p>Instalamos el servidor xrdp desde Synaptics.</p>
+			<img src='./imagenes/26.png'/>
+		</li>
+	</ol>
+<h1><a id='bloque3'>Instalación y configuración de Servidor de Terminales</a></h1>
+	<ol>
+		<li><p>Abrimos el Administrador de servidores y vamos a Agregar Roles. DAmos clic en Agregar Servicios de escritorio remoto y damos clic en siguiente</p>
+			 <img src='./imagenes/31.png'/>				
+		</li>
+	</ol>
+
+<h1><a id='bloque4'>Instalación y configuración de RemoteApp</a></h1>
+	<ol>
+		<li><p>Añadimos las herramientas del host de escritorio remoto.<br></p>
+			 <img src='./imagenes/39.png'/>			
+		</li>
+	</ol>
+</body>
+</html>
