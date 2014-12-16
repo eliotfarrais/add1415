@@ -17,7 +17,7 @@ if PARAM1=="--help" || PARAM1==""
 	puts 'Archivo en Ruby para eliminar mediante comando:'
 	puts "papelera [ --help | -r file [ destino ] | --info | --clean | file ] "
 elsif PARAM1=="-r" then
-	system("move %USERPROFILE%"+PARAM2+' '+PARAM3)
+	system("move %USERPROFILE%\Papelera\"+PARAM2+' '+PARAM3)
 	system('cls')
 	puts "Recuperando el archivo "+PARAM2+" en "+PARAM3
 elsif PARAM1=="--clean" then
