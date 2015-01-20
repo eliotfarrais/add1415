@@ -1,0 +1,114 @@
+<html>
+<head>
+	<title>Instalación y configuración de tareas programadas</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+</head>
+<body>
+<div style='display:table-row; padding: 10px;'>
+  <div style='float: left; width=20%; padding:10px;'>
+  <img src='./files/logo.png'/>
+  </div>
+  <div style='float: left;padding:10px'>
+  <ul>
+    <li><b>M&oacute;dulo:</b> <i>Sistemas Operativos</i></li>
+    <li><b>T&iacute;tulo del trabajo</b> <i> Tareas programadas en Windows y Linux</i></li>
+    <li><b>Componentes del grupo:</b> <i>Eliot Farrais García</i></li>
+    <li><b>Curso Acad&eacute;mico:</b> <i>2014/2015</i></li>
+    <li><b>Fecha de entrega:</b> <i>23 de septiembre de 2014</i></li>
+  </ul>
+  </div>
+</div>
+<h1><a id='bloque1'>Tareas programadas en Linux</h1>
+	<h2>Tareas Programadas diferidas (at)</h2>
+		<ol>
+			<li>
+				<p>Ejecutar el apagado de la máquina con el comando.<br>
+					Para ello escribimos "at (hora de ejecución) y luego escribimos el comando "shutdown -h 1"(Apagado en un minuto).<br>
+					Por ultimos pulsamos CTRL + D en el teclado para guardar los cambios de at en el equipo</p>
+				<img src='./imagenes/1.png'/>				
+			</li>
+			<li>
+				<p>Comprobamos las tareas pendientes con el comando atq</p>
+				<img src='./imagenes/2.png'/>
+			</li>
+		</ol>
+	<h2>Tareas programadas periódicas (crontab)</h2>
+	<ol>
+		<li>
+			<p>Mostrar un mensaje a pantalla <br>
+			Para ellos podemos usar el siguiente script:<br>
+			-----------------------------------------------------------------------<br>
+			#!/bin/bash<br>
+			# Mostrar mensaje en pantalla<br>
+			DISPLAY=:0<br>
+			export DISPLAY<br>
+			zenity --info --text="Tarea ejecutada"<br>
+			-----------------------------------------------------------------------<br>
+			<img src='./imagenes/4.png'/><br><br>
+			Y lo creamos dentro una carpeta del path, en nuestro caso será  "/usr/local/bin" con permisos 744 <br><br>
+			<img src='./imagenes/5.png'/>
+			</p>
+		</li>
+		<li>
+			<p>
+			Ejecutamos cron con el comando crontab -e (desde profesor) y editamos el archivo. <br>
+			Ponemos la ubicación, y que se ejecute a la hora deseada de todos los días<br>
+			<img src='./imagenes/6.png'/>
+			</p>
+		</li>
+		<li>
+			<p>Instalamos el paquete zenity para que pueda ser utilizado por el script</p>
+			<img src='./imagenes/7.png'/>
+		</li>
+		<li>
+			<p>la tarea se nos abrá ejecutado automáticamente</p>
+			<img src='./imagenes/8.png'/>
+		</li>
+	</ol>
+	<h2>Tareas programadas asíncronas (anacron)</h2>
+	<ol>
+		<li>
+			<p>Para el uso de tareas programadas asíncronas (anacron),<br>
+			instalaremos anacron primeramente<br></p>
+			<img src='./imagenes/9.png'/>
+		</li>
+		<li>
+			<p>Editamos el archivo /etc/anacrontab y agregramos la entrada del lanzador. <br>
+			Por ultimo obligamos la ejecución de anacron con anacron -n<br></p>
+			<img src='./imagenes/10.png'/>
+		</li>
+	</ol>
+<h1>Tareas programadas en Windows</h1>
+	<h2></h2>
+		<ol>
+			<li>
+				<p>Abrimos el programador de tareas en <br>Panel de control -> Sistemas y seguridad -> herramientas administrativas -> Programador de tarea.</p>
+				<img src='./imagenes/11.png'/>
+			</li>
+			<li>
+				<p>Creamos una tarea básica, donde pondremos el apagado del sistema</p>
+				<img src='./imagenes/12.png'/>
+			</li>
+			<li>
+				<p>Escribimos el nombre de apagado y la descripción de la tarea.</p>
+				<img src='./imagenes/13.png'/>
+			</li>
+			<li>
+				<p>Creamos una tarea Diariamente </p>
+				<img src='./imagenes/14.png'/>
+			</li>
+			<li>
+				<p>Elegimos los días, la hora y las veces que se va a repetir en los días de la semana</p>
+				<img src='./imagenes/15.png'/>
+			</li>
+			<li>
+				<p>Hacemos clic en Inicar un programa y elegimos el script de apagado que hemos realizado para apagar el sistema</p>
+				<img src='./imagenes/16.png'/>
+			</li>
+			<li>
+				<p>Por último damos finalizar y se nos habrá creado la tarea programada<br> Nos saldrá la tarea programada en el programador de tareas.</p>
+				<img src='./imagenes/17.png'/>
+			</li>
+		</ol>
+</body>
+</html>
