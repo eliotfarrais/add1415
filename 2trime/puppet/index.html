@@ -1,0 +1,219 @@
+<html>
+<head>
+	<title>Instalación y configuración de tareas programadas</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+</head>
+<body>
+<div style='display:table-row; padding: 10px;'>
+  <div style='float: left; width=20%; padding:10px;'>
+  <img src='./files/logo.png'/>
+  </div>
+  <div style='float: left;padding:10px'>
+  <ul>
+    <li><b>M&oacute;dulo:</b> <i>Sistemas Operativos</i></li>
+    <li><b>T&iacute;tulo del trabajo</b> <i> Uso de Puppet por Windows y Linux</i></li>
+    <li><b>Componentes del grupo:</b> <i>Eliot Farrais García</i></li>
+    <li><b>Curso Acad&eacute;mico:</b> <i>2014/2015</i></li>
+    <li><b>Fecha de entrega:</b> <i>23 de septiembre de 2014</i></li>
+  </ul>
+  </div>
+</div>
+<h1><a id='bloque1'>Puppet en Linux</h1>
+	<h2>Instalación de Puppet</h2>
+		<h3>Instalación de Puppet master</h3>
+			<ol>
+				<li>
+					<p>Ponemos una IP estática para el Servidor. reiniciamos el sistema</p>
+					<img src='./imagenes/1.png'/>
+				</li>
+				<li>
+					<p>Nos quedará algo así</p>
+					<img src='./imagenes/2.png'/>
+				</li>
+				<li>
+					<p>Pondremos la tarjeta de red del virtual box en modo puente</p>
+					<img src='./imagenes/3.png'/>
+				</li>
+				<li>
+					<p>Modificamos el nombre del fichero /etc/hostname, borrando y poniendo marte.startwars</p>
+					<img src='./imagenes/4.png'/>
+				</li>
+				<li>
+					<p>Mdificamos el fichero /etc/hosts</p>
+					<img src='./imagenes/5.png'/>
+				</li>
+				<li>
+					<p> Modificamos el archivo /etc/resolv.conf</p>
+					<img src='./imagenes/6.png'/>
+				</li>
+				<li>
+					<p>Instalamos puppetmaster en el Cliente </p>
+					<img src='./imagenes/7.png'/>
+				</li>
+				<li>
+					<p>Creamos los siguientes archivos y directorios</p>
+					<img src='./imagenes/8.png'/>
+				</li>
+				<li>
+					<p>Modificamos el fichero readme.txt y le pondremos "¡Que la fuerza te acompañe!"</p>
+					<img src='./imagenes/9.png'/>
+				</li>
+				<li>
+					<p>Modificamos el fichero site.pp</p>
+					<img src='./imagenes/10.png'/>
+				</li>
+				<li>
+					<p>Modificamos el fichero hostlinux1.pp</p>
+					<img src='./imagenes/11.png'/>
+				</li>
+				<li>
+					<p>Reiniciamos el servicio de Puppet</p>
+					<img src='./imagenes/12.png'/>
+				</li>
+				<li>
+					<p>Miramos el archivo syslog para ver si existen errores</p>
+					<img src='./imagenes/13.png'/>
+				</li>
+			</ol>
+		<h3>Instalación de Puppet Cliente</h3>
+		<ol>
+			<li>
+				<p>Le cambiamos el nombre a la maquina</p>
+				<img src='./imagenes/14.png'/>
+			</li>
+			<li>
+				<p>Luego pondremos y modificaremos el archivo /etc/resolv.conf</p>
+				<img src='./imagenes/15.png'/>
+			</li>
+			<li>
+				<p>Modificamos el archivo /etc/hosts</p>
+				<img src='./imagenes/16.png'/>
+			</li>
+			<li>
+				<p>Hacemos un ping para comprobar la configuración </p>
+				<img src='./imagenes/17.png'/>
+			</li>
+			<li>
+				<p>Modificamos las interfaces de red</p>
+				<img src='./imagenes/18.png'/>
+			</li>
+			<li>
+				<p> Instalamos el puppet con apt-get install puppet</p>
+				<img src='./imagenes/19.png'/>
+			</li>
+			<li>
+				<p>Añadimos lo siguiente a la configuración</p>
+				<img src='./imagenes/20.png'/>
+			</li>
+			<li>
+				<p>Modificamos el archivo puppet</p>
+				<img src='./imagenes/21.png'/>
+			</li>
+			<li>
+				<p>Reiniciamos el servicio</p>
+				<img src='./imagenes/22.png'/>
+			</li>
+			<li>
+				<p>Comprobamos los logs del cliente</p>
+				<img src='./imagenes/23.png'/>
+			</li>
+		</ol>
+	<h2>Aceptar certificados</h2>
+	<p>Antes de que el master acepte a client1.nombredegrupo, como cliente, se deben intercambiar los certificados.</p>
+		<h3>En master</h3>
+		<ol>
+			<li>
+				<p>Vamos al master y consultamos las peticiones</p>
+				<img src='./imagenes/24.png'/>
+			</li>
+			<li>
+				<p>Aceptamos al cliente</p>
+				<img src='./imagenes/25.png'/>
+			</li>
+		</ol>
+		<h3>Comprobación final</h3>
+		<ol>
+			<li>
+				<p>Vamos a client1 y ejecutamos el siguiente comando para ver posibles errores</p>
+				<img src='./imagenes/26.png'/>
+			</li>
+		</ol>
+	<h2>Creación de un segundo archivo hostlinux2.pp</h2>
+		<ol>
+			<li>
+				<p>Creamos un nuevo archivo hostlinux2.pp</p>
+				<img src='./imagenes/27.png'/>
+			</li>
+			<li>
+				<p>Añadimos al archivo site.pp el archivo hostlinux2.pp</p>
+				<img src='./imagenes/28.png'/>
+			</li>
+			<li>
+				<p>Comprobamos el resultado final con </p>
+				<img src='./imagenes/29.png'/>
+			</li>
+		</ol>
+<h1>Cliente pupet en Windows </h1>
+	<h2>Instalación</h2>
+		<ol>
+			<li>
+				<p>Modificamos la Ip, para que esta sea fija</p>
+				<img src='./imagenes/30.png'/>
+			</li>
+			<li>
+				<p>Descargamos Puppet de: https://downloads.puppetlabs.com/windows/ </p>
+				<img src='./imagenes/31.png'/>
+			</li>
+			<li>
+				<p>descargamos Ruby para windows (RubyInstaller) ver.:2.1.5</p>
+				<img src='./imagenes/32.png'/>
+			</li>
+			<li>
+				<p>Instalamos Ruby</p>
+				<img src='./imagenes/33.png'/>
+			</li>
+			<li>
+				<p>Abrimos el instalador de Puppet, en master pondremos master.eliot</p>
+				<img src='./imagenes/34.png'/>
+			</li>
+		</ol>
+	<h2>Configuración</h2>
+		<ol>
+			<li>
+				<p>Creamos un archivo de configuración nuevo para Windows llamado hostlinux3.pp en master</p>
+				<img src='./imagenes/35.png'/g>
+			</li>
+			<li>
+				<p>Añadiremos al archivo site la configuración y reiniciamos el servicio</p>
+				<img src='./imagenes/36.png'/>
+			</li>
+			<li>
+				<p>Ejecutamos cmd como administrador y modificamos el archivo hosts</p>
+				<img src='./imagenes/37.png'/>
+			</li>
+			<li>
+				<p>Nos vamos al master y ejecutamos facter miramos la versión de Puppet y comprobamos que es la que nos hemos descargado</p>
+				<img src='./imagenes/38.png'/>
+			</li>
+			<li>
+				<p>Comprobamos que se ha instalado correctamente ejecutando el programa Accesorios->Puppet->facter</p>
+				<img src='./imagenes/39.png'/>
+			</li>
+			<li>
+				<p>Vamos al master y miramos las peticiones para Agregar al cliente de windows (client2)</p>
+				<img src='./imagenes/40.png'/>
+			</li>
+			<li>
+				<p>Añadimos el client2 de manera: puppetca --sign "client2.eliot"</p>
+				<img src='./imagenes/41.png'/>
+			</li>
+			<li>
+				<p>Imprimimos la información de client2</p>
+				<img src='./imagenes/42.png'/>
+			</li>
+			<li>
+				<p></p>
+			</li>
+		</ol>
+</body>
+</html>
