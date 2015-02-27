@@ -1,0 +1,89 @@
+<html>
+<head>
+	<title>Instalación y configuración de tareas programadas</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+</head>
+<body>
+<div style='display:table-row; padding: 10px;'>
+  <div style='float: left; width=20%; padding:10px;'>
+  <img src='./files/logo.png'/>
+  </div>
+  <div style='float: left;padding:10px'>
+  <ul>
+    <li><b>M&oacute;dulo:</b> <i>Sistemas Operativos</i></li>
+    <li><b>T&iacute;tulo del trabajo</b> <i>Generación de usuarios masivos</i></li>
+    <li><b>Componentes del grupo:</b> <i>Eliot Farrais García</i></li>
+    <li><b>Curso Acad&eacute;mico:</b> <i>2014/2015</i></li>
+    <li><b>Fecha de entrega:</b> <i>27 de febrero de 2015</i></li>
+  </ul>
+  </div>
+</div>
+<h1><a id='bloque1'>Servidores de impresión</h1>
+	<h2>Instalación Gwak para Windows </h2>
+			<ol>
+				<li>
+					<p>Nos descargamos de la página oficial gwak y lo instalamos</p>
+					<img src='./imagenes/1.png'/>
+				</li>
+				<li>
+					<p>En la instalación elegimos Full installation</p>
+					<img src='./imagenes/2.png'/>
+				</li>
+				<li>
+					<p>Luego Seleccionamos Download Sources</p>
+					<img src='./imagenes/3.png'/>
+				</li>
+				<li>
+					<p>Metemos dentro de la variable PATH del sistema el directorio de instalación de Awk</p>
+					<img src='./imagenes/4.png'/>
+				</li>
+			</ol>
+	<h2>Instalación de Script XCALCS.vbs</h2>
+	<p>Es un script que nos permite, ver, modificar y eliminar permisos NTFS en Windows</p>
+		<ol>
+			<li>
+				<p>Descargamos el Script desde: http://download.microsoft.com/download/f/7/8/f786aaf3­a37b­45ab­b0a2­8c8c18bbf483/XCacls_Installer.exe y lo abrimos</p>
+				<img src='./imagenes/6.png'/>
+			</li>
+			<li>
+				<p>Buscamos la función IsOsSupported y la modificamos</p>
+				<img src='./imagenes/7.png'/>
+			</li>
+			<li>
+				<p>Cambiaremos el motor de secuencias de comandos predeterminado de WScript a CScript</p>
+				<img src='./imagenes/8.png'/>
+			</li>
+		</ol>
+	<h2>Ficheros CSV y AWK</h2>
+	<ol>
+		<li>
+			<p>Creamos el fichero CSV, creandolo a mano. Este mismo contiene cuatro campos: nombre;apellido1;apellido2;grupo</p>
+			<img src='./imagenes/9.png'/>
+		</li>
+		<li>
+			<p>Creamos el Script alta.awk</p>
+			<img src='./imagenes/10.png'/>
+		</li>
+		<li>
+			<p>Se nos generael sigiente archivo .bat</p>
+			<img src='./imagenes/11.png'/>
+		</li>
+		<li>
+			<p>Comprobamos el resultado, mirando dentro de la unidad organizativa FP., lo que se ha creado</p>
+			<img src='./imagenes/12.png'/>
+		</li>
+		<li>
+			<p>Comprobamos que se han creado los usuarios dentro de 1CFGM</p>
+			<img src='./imagenes/13.png'/>
+		</li>
+		<li>
+			<p>Comprobamos que se han creado los usuarios dentro de 2CFGM</p>
+			<img src='./imagenes/14.png'/>
+		</li>
+		<li>
+			<p>Miramos las carpetas creadas por el sistema</p>
+			<img src='./imagenes/14.png'/>
+		</li>
+	</ol>
+</body>
+</html>
