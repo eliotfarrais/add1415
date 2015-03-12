@@ -1,0 +1,152 @@
+<html>
+<head>
+	<title>Instalación y configuración de tareas programadas</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+</head>
+<body>
+<div style='display:table-row; padding: 10px;'>
+  <div style='float: left; width=20%; padding:10px;'>
+  <img src='./files/logo.png'/>
+  </div>
+  <div style='float: left;padding:10px'>
+  <ul>
+    <li><b>M&oacute;dulo:</b> <i>Sistemas Operativos</i></li>
+    <li><b>T&iacute;tulo del trabajo</b> <i>NFS</i></li>
+    <li><b>Componentes del grupo:</b> <i>Eliot Farrais García</i></li>
+    <li><b>Curso Acad&eacute;mico:</b> <i>2014/2015</i></li>
+    <li><b>Fecha de entrega:</b> <i>9 de marzo de 2015, 08:10</i></li>
+  </ul>
+  </div>
+</div>
+<h1><a id='bloque1'>Servidores de impresión</h1>
+	<h2>Instalación NFS en  Windows </h2>
+			<ol>
+				<li>
+					<p>Instalamos el rol de servidor de archivos y elegimos NFS, en administración del servidos</p>
+					<img src='./imagenes/1.png'/>
+				</li>
+				<li>
+					<p>Una vez instalado vamos a Inicio -> Herramientas Administrativas -> Servicios para network File System</p>
+					<img src='./imagenes/2.png'/>
+				</li>
+				<li>
+					<p>Creamos dos directorios a compartir en C:\. Uno Private y otro Public</p>
+					<img src='./imagenes/3.png'/>
+				</li>
+				<li>
+					<p>Hacemos clic derecho -> Propiedades -> Uso compartido de NFS y ponemos Public como lectura/escritura y Priate con solo lectura desde ls red
+					</p>
+					<img src='./imagenes/4.png'/>
+					<img src='./imagenes/10.png'/>
+				</li>
+				<li>
+					<p>Desactivamos la interidad y autentificación de Kerberos</p>
+					<img src='./imagenes/5.png'/>
+				</li>
+				<li>
+					<p>En permisos, habilitamos los permisos de Lectura y escritura, activando el acceso a la Raíz</p>
+					<img src='./imagenes/6.png'/>
+				</li>
+				<li>
+					<p>En el cliente, montamos el servicio para NFS activando la característica de Windows</p>
+					<img src='./imagenes/7.png'/>
+				</li>
+				<li>
+					<p>El la consola ponemos showmount -e ip-del-servidor para comprobar los servicios disponibles a compartir en el servidor</p>
+					<img src='./imagenes/8.png'/>
+				</li>
+				<li>
+					<p>Ponemos nfsadmin client start</p>
+					<img src='./imagenes/9.png'/>
+				</li>
+				<li>
+					<p>Ponemos el comando: mount –o anon,nolock,r,casesensitive \\ip-del-servidor\Nombre-recurso-NFS *  para conectar public y private</p>
+					<img src='./imagenes/11.png'/>
+				</li>
+				<li>
+					<p>Comprobamos que nos salen los recursos en Equipo</p>
+					<img src='./imagenes/12.png'/>
+				</li>
+				<li>
+					<p>Intentamos copiar en Private un documento, y comprobamos que solo es , solo lectua</p>
+					<img src='./imagenes/13.png'/>
+				</li>
+				<li>
+					<p>En public realizamos la misma operación y comprobamos que nos funciona correctamente</p>
+					<img src='./imagenes/14.png'/>
+				</li>
+			</ol>
+	<h2>Instalación NFS en  debian</h2>
+			<ol>
+				<h3>Servidor</h3>
+				<li>
+					<p>Cambiamos la Ip del servidor</p>
+					<img src='./imagenes/15.png'/>
+				</li>
+				<li>
+					<p>Cambiamos el nombre del Servidor con el comando hostname</p>
+					<img src='./imagenes/16.png'/>
+				</li>
+				<li>
+					<p>Modificamos el archivo /etc/hosts</p>
+					<img src='./imagenes/17.png'/>
+				</li>
+				<li>
+					<p>Instalamos los programas con apt-get install nfs-common nfs-kernel-server</p>
+					<img src='./imagenes/18.png'/>
+				</li>
+				<li>
+					<p>Creamos las carpetas Public y Private</p>
+					<img src='./imagenes/19.png'/>
+				</li>
+				<li>
+					<p>Modificamos la pertenencia de grupos</p>
+					<img src='./imagenes/20.png'/>
+				</li>
+				<li>
+					<p>Modificamos el permiso de private</p>
+					<img src='./imagenes/21.png'/>
+				</li>
+				<li>
+					<p>Modificamos el archivo /etc/export, cambiando la IP del cliente</p>
+					<img src='./imagenes/22.png'/>
+				</li>
+				<li>
+					<P>Inicamos el service con el commando:</P>
+					<img src='./imagenes/23.png'/>
+				</li>
+			<h3>Cliente</h3>
+				<li>
+					<p>Cambiamos la I.P. del cliente </p>
+					<img src='./imagenes/24.png'/>
+				</li>
+				<li>
+					<p>Instalamos el paquete nfs-common con elcomando aptitude install nfs-common</p>
+					<img src='./imagenes/25.png'/>
+				</li>
+				<li>
+					<p>Hacemos ping al servidor para comprobar que efectivamente tenemos conexión entre los servidores</p>
+					<img src='./imagenes/26.png'/>
+				</li>
+				<li>
+					<p>Creamos la carpeta /mnt/remoto/public y lo montamos con el comando 172.16.08.105:/var/export/public /mnt/remoto/public</p>
+					<img src='./imagenes/27.png'/>
+				</li>
+				<li>
+					<p>Hacemos lo mismo con la carpeta /mnt/remoto/private, montándola con el comando 172.16.108.105:/var/export/private /mnt/remoto/private</p>
+					<img src='./imagenes/28.png'/>
+				</li>
+				<li>
+					<p>Comprobamos que los ficheros están montados con elcomando df -hT *</p>
+					<img src='./imagenes/29.png'/>
+				</li>
+				<li>
+					<p>Comprobamos con la ventana de comando qe efectivament solo se puede crear en la carpeta public yy solo se puede leer en la carpeta private</p>
+					<img src='./imagenes/30.png'/>
+				</li>
+			</ol>
+			<h3>Conclusiones</h3>
+				<p>No pude acceder a las carpetas compartidas desde el explorador pero sí desde la terminal., debido a que se salía un mensaje de acceso denegado <br> a la hora de intentar aceder a la carpeta private</p>
+				<img src='./imagenes/31.png'/>
+</body>
+</html>
