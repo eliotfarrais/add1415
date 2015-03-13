@@ -1,0 +1,78 @@
+<html>
+<head>
+	<title>Instalación y configuración de tareas programadas</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+</head>
+<body>
+<div style='display:table-row; padding: 10px;'>
+  <div style='float: left; width=20%; padding:10px;'>
+  <img src='./files/logo.png'/>
+  </div>
+  <div style='float: left;padding:10px'>
+  <ul>
+    <li><b>M&oacute;dulo:</b> <i>Sistemas Operativos</i></li>
+    <li><b>T&iacute;tulo del trabajo</b> <i>NFS</i></li>
+    <li><b>Componentes del grupo:</b> <i>Eliot Farrais García</i></li>
+    <li><b>Curso Acad&eacute;mico:</b> <i>2014/2015</i></li>
+    <li><b>Fecha de entrega:</b> <i>9 de marzo de 2015, 08:10</i></li>
+  </ul>
+  </div>
+</div>
+<h1><a id='bloque1'>Servidores de impresión</h1>
+	<h2>Instalación NFS en  Windows </h2>
+			<ol>
+				<li>
+					<p>Instalamos con el comando apt-get los siguientes archivos: <br>apt-get install -y samba samba-common smbclient samba-doc cifs-utils </p>
+					<img src='./imagenes/1.png'/>
+				</li>
+				<li>
+					<p>Guardamos el viejo fichero y creamos un nuevo de la configuracion de Samba</p>
+					<img src='./imagenes/2.png'/>
+				</li>
+				<li>
+					<p>Modificamos el fichero smb.conf</p>
+					<img src='./imagenes/3.png'/>
+				</li>
+				<li>
+					<p>Añadimos usuarios y grupos para samba</p>
+					<img src='./imagenes/4.png'/>
+				</li>
+				<li>
+					<p>Creamos directorios y cambiamos el usuario propietario para que quede como la imagen, con el comando chown</p>
+					<img src='./imagenes/5.png'/>
+				</li>
+				<li>
+					<p>Modificamos tambiñen los grupos con chgrp. Quedando algo así</p>
+					<img src='./imagenes/6.png'/>
+				</li>
+				<li>
+					<p>Añadimos los usuarios a samba</p>
+					<img src='./imagenes/7.png'/>
+				</li>
+				<li>
+					<p>Nos quedaría algo así</p>
+					<img src='./imagenes/8.png'/>
+				</li>
+				<li>
+					<p>Miramos el estado de samba, y sinó está iniciado el servicio, lo iniciamos</p>
+					<img src='./imagenes/9.png'/>
+				</li>
+			</ol>
+			<h2>Cliente Windows</h2>
+			<ol>
+				<li>
+					<p>Accedemos con la Ip del servidor a los recursos </p>
+					<img src='./imagenes/10.png'/>
+				</li>
+				<li>
+					<p>Intentamos entrar con cdrom, ero no nos deja dado que no existe una unidad cdrom en el servidor</p>
+					<img src='./imagenes/11.png'/>
+				</li>
+				<li>
+					<p>Intentamos acceder con info1 a informáticos</p>
+					<img src='./imagenes/12.png'/>
+
+				</li>
+			</ol>
+</body>
+</html>
