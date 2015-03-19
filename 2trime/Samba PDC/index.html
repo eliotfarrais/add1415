@@ -1,0 +1,71 @@
+<html>
+<head>
+	<title>Instalación y configuración de tareas programadas</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+</head>
+<body>
+<div style='display:table-row; padding: 10px;'>
+  <div style='float: left; width=20%; padding:10px;'>
+  <img src='./files/logo.png'/>
+  </div>
+  <div style='float: left;padding:10px'>
+  <ul>
+    <li><b>M&oacute;dulo:</b> <i>Sistemas Operativos</i></li>
+    <li><b>T&iacute;tulo del trabajo</b> <i>Samba PDC</i></li>
+    <li><b>Componentes del grupo:</b> <i>Eliot Farrais García</i></li>
+    <li><b>Curso Acad&eacute;mico:</b> <i>2014/2015</i></li>
+    <li><b>Fecha de entrega:</b> <i>9 de marzo de 2015, 08:10</i></li>
+  </ul>
+  </div>
+</div>
+<h1><a id='bloque1'>PDC Con Samba</h1>
+	<ol>
+		<li>
+			<p>Instalamos samba, y editamos el archivo smb.conf quedand así</p>
+			<p>Editamos la parte Global</p>
+			<img src='./imagenes/1.png'/>
+			<p>Editamos la parte homes</p>
+			<img src='./imagenes/2.png'/>
+		</li>
+		<li>
+			<p>Le ponemos I.P. fijas al servidor</p>
+			<img src='./imagenes/3.png'/>
+		</li>
+		<li>
+			<p>Creamos los grupos enterprise y borg</p>
+			<img src='./imagenes/4.png'/>
+		</li>
+		<li>
+			<p>Metemos dentro del grupo enterprise a los usuarios "kirk", "spock", "sulu". "</p>
+			<img src='./imagenes/5.png'/>
+		</li>
+		<li>
+			<p>Metemos dentro del grupo borg a los usuarios "borg1", "borg2" y "borg3".</p>
+			<img src='./imagenes/6.png'/>
+		</li>
+		<li>
+			<p>Metemos los usuarios dentro de Samba</p>
+			<img src='./imagenes/7.png'/>
+		</li>
+		<li>
+			<p>Añadimos y cambiamos los propietarios a las carpetas de login de todo los usuarios</p>
+			<img src='./imagenes/8.png'/>
+		</li>
+	</ol>
+	<h1>Unir un cliente Windows 7</h1>
+		<ol>
+			<li>
+				<p>Editamos los siguientes archivos de registro</p>
+				Estos archivos se encuentran en: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\LanmanWorkstation\Parameters
+				<img src='./imagenes/8.png'/>
+				Estos archivos se encuentran en: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Netlogon\Parameters 
+				<img src='./imagenes/9.png'/>
+			</li>
+				<p>Error en cliente</p>
+			<li>
+				
+			</li>
+		</ol>
+
+</body>
+</html>
